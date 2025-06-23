@@ -1,0 +1,147 @@
+/* Result.css */
+.result {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Heading */
+.result h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Result Content */
+.result-content {
+  margin-top: 2rem;
+}
+
+/* Vehicle List */
+.vehicle-list {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.vehicle-list h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.vehicle-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vehicle-list li {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.vehicle-list li:last-child {
+  border-bottom: none;
+}
+
+.vehicle-list li strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.vehicle-list li a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vehicle-list li a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Estimate Container */
+.estimate-container {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #e0f2fe;
+  border-radius: 10px;
+  border: 1px solid #bae6fd;
+}
+
+.estimate-display {
+  font-size: 1.2rem;
+  color: #1e40af;
+  margin: 0;
+}
+
+.estimate-display strong {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .result {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .result h2 {
+    font-size: 1.5rem;
+  }
+
+  .vehicle-list h3 {
+    font-size: 1.2rem;
+  }
+
+  .estimate-display {
+    font-size: 1.1rem;
+  }
+
+  .estimate-display strong {
+    font-size: 1.3rem;
+  }
+}

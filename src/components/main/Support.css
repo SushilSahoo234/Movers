@@ -1,0 +1,175 @@
+.support-container {
+  background-color: #000;
+  color: #000;
+  padding: 3rem 20px;
+  font-family: Arial, sans-serif;
+}
+
+.support-header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.support-header h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.support-header p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.support-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.support-card {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  border-radius: 12px;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.support-card-icon {
+  font-size: 40px;
+  margin-top: 8px;
+}
+
+.support-card-text h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #212121;
+}
+
+.support-card-text p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #818181;
+}
+
+.support-card-text a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #2962ff;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+/* Responsive Adjustments */
+
+/* Small screens (up to 480px, e.g., mobile phones) */
+@media (max-width: 480px) {
+  .support-container {
+    padding: 1.5rem 10px; /* Reduced padding for smaller screens */
+  }
+
+  .support-header h3 {
+    font-size: 20px; /* Slightly smaller heading */
+  }
+
+  .support-header p {
+    font-size: 14px; /* Smaller paragraph text */
+  }
+
+  .support-card {
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center content */
+    padding: 15px; /* Slightly reduced padding */
+    gap: 10px; /* Reduced gap between elements */
+  }
+
+  .support-card-icon {
+    font-size: 32px; /* Smaller icon size */
+    margin-top: 0; /* Reset margin for vertical layout */
+  }
+
+  .support-card-text h3 {
+    font-size: 0.9rem; /* Slightly smaller heading */
+    margin-top: 1rem; /* Adjusted margin */
+  }
+
+  .support-card-text p {
+    font-size: 13px; /* Smaller paragraph text */
+  }
+}
+
+/* Medium screens (481px to 767px, e.g., larger phones and small tablets) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .support-container {
+    padding: 2rem 15px; /* Adjusted padding */
+  }
+
+  .support-header h3 {
+    font-size: 22px; /* Slightly smaller heading */
+  }
+
+  .support-header p {
+    font-size: 15px; /* Slightly smaller paragraph */
+  }
+
+  .support-card {
+    padding: 18px; /* Slightly reduced padding */
+    gap: 15px; /* Adjusted gap */
+  }
+
+  .support-card-icon {
+    font-size: 36px; /* Slightly smaller icon */
+  }
+
+  .support-card-text h3 {
+    font-size: 0.95rem; /* Slightly smaller heading */
+    margin-top: 1.5rem; /* Adjusted margin */
+  }
+
+  .support-card-text p {
+    font-size: 13.5px; /* Slightly smaller paragraph */
+  }
+}
+
+/* Existing media query for larger screens (768px and up) */
+@media (min-width: 768px) {
+  .support-card-container {
+    grid-template-columns: 1fr 1fr; /* Original two-column layout */
+  }
+}
+
+/* Large screens (1200px and up, e.g., desktops) */
+@media (min-width: 1200px) {
+  .support-container {
+    padding: 4rem 30px; /* Increased padding for larger screens */
+  }
+
+  .support-header h3 {
+    font-size: 28px; /* Larger heading for better readability */
+  }
+
+  .support-header p {
+    font-size: 18px; /* Larger paragraph text */
+  }
+
+  .support-card {
+    padding: 25px; /* Slightly increased padding */
+  }
+
+  .support-card-icon {
+    font-size: 44px; /* Slightly larger icon */
+  }
+
+  .support-card-text h3 {
+    font-size: 1.1rem; /* Slightly larger heading */
+  }
+
+  .support-card-text p {
+    font-size: 15px; /* Slightly larger paragraph */
+  }
+}

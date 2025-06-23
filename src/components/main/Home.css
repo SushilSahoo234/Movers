@@ -1,0 +1,436 @@
+.home-page {
+  font-family: sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-banner {
+  background-image: url('../../assets/images/herobg.png');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.service-panel {
+  position: relative;
+  top: -4rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 100%;
+}
+
+.location {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem; /* Added padding for smaller screens */
+}
+
+.icon-text h3 {
+  font-size: 1rem;
+}
+
+.service-card {
+  width: 160px;
+  height: 200px;
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.service-card.highlight {
+  width: 12rem;
+}
+
+.service-card .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.service-card .label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.service-card.highlight {
+  background-color: #0047ff;
+  color: white;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.service-card .icon img,
+.service-card .icon svg {
+  width: 9.5rem;
+  height: 7.5rem;
+  margin: -1.5rem;
+}
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.estimate-card {
+    cursor: pointer;
+  background-color: #0047ff;
+  color: white;
+  border-radius: 1rem;
+  width: 146px;
+  height: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.estimate-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.estimate-subtext {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.3rem;
+  margin-bottom: auto;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  align-self: flex-start;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 1rem;
+  max-width: 800px;
+  width: 90%;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content.horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.modal-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-subtext {
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.modal-service-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-option:hover {
+  background-color: #f2f2f2;
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.option-left img {
+  width: 32px;
+  height: 32px;
+}
+
+.modal-input {
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.modal-user-type {
+  margin-top: 1rem;
+}
+
+.user-buttons button{
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+   padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+.user-buttons button.active {
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  background: white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: #0047ff;
+  color: white;
+  font-weight: bold;
+  border-color: #0047ff;
+}
+
+.estimate-submit {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.red{
+  color: red;
+  font-size: small;
+  font-weight: 600;
+}
+.modal-close,
+.modal-back {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .services {
+    gap: 2rem;
+  }
+
+  .service-card,
+  .estimate-card {
+    width: 140px; /* Slightly reduced to fit better */
+    height: 180px; /* Adjusted height proportionally */
+  }
+
+  .service-card .icon img,
+  .service-card .icon svg {
+    width: 8.5rem;
+    height: 6.5rem;
+  }
+
+  .modal-box {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .services {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .service-card,
+  .estimate-card {
+    width: 120px;
+    height: 160px;
+  }
+
+  .service-card .icon img,
+  .service-card .icon svg {
+    width: 7rem;
+    height: 5.5rem;
+  }
+
+  .modal-content.horizontal {
+    flex-direction: column;
+  }
+
+  .modal-box {
+    max-width: 600px;
+    padding: 1.5rem;
+  }
+
+  .modal-input {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .estimate-submit {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 50vh;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .service-panel {
+    top: -2rem;
+    padding: 1.5rem;
+  }
+
+  .services {
+    gap: 1rem;
+  }
+
+  .service-card,
+  .estimate-card {
+    width: 100px;
+    height: 140px;
+  }
+
+  .service-card .icon img,
+  .service-card .icon svg {
+    width: 6rem;
+    height: 4.5rem;
+  }
+
+  .modal-box {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .modal-subtext {
+    font-size: 0.85rem;
+  }
+
+  .user-buttons {
+    flex-direction: column;
+  }
+
+  .user-buttons button {
+    width: 100%;
+  }
+}
