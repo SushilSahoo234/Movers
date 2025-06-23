@@ -17,7 +17,7 @@ dotenv.config();
 
 // Initialize express app
 const app = express();
-
+const PORT = process.env.PORT || 5000;
 // Middlewares
 app.use(cors());
 app.use(express.json()); // to parse JSON request bodies
@@ -38,8 +38,8 @@ mongoose
   })
   .then(() => {
     console.log('✅ MongoDB connected');
-    app.listen(5000, () => {
-      console.log('🚀 Server running on http://localhost:5000');
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on ${PORT}`);
     });
   })
   .catch((err) => {
