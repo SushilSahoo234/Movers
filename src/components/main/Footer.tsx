@@ -27,10 +27,10 @@ const Footer = () => {
           <a href="#">Cookies Policy</a> | <a href="#">Legal</a> | <a href="#">Privacy</a>
         </div>
         <div className="footer-social">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
+          <a href="https://www.instagram.com/sushillll_1/?hl=en">Instagram</a>
+          <a href="https://www.linkedin.com/in/sushil-sahoo-550ba4261/">LinkedIn</a>
           <a href="#">Twitter</a>
-          <a href="#">GitHub</a>
+          <a href="https://github.com/SushilSahoo234">GitHub</a>
         </div>
       </div>
     </footer>
