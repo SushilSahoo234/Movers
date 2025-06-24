@@ -54,34 +54,37 @@ const Home = () => {
       service: selectedService,
       city,
     };
+try {
+  const res = await fetch(`${process.env.REACT_APP_API_URL}/api/estimate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+  });
 
-    try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/estimate`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+  // Check response status
+  if (!res.ok) {
+    console.warn('Server responded with error:', res.status);
+    return;
+  }
 
-      const result = await res.json();
-      if (res.ok) {
-        navigate('/result', { state: formData });
-        setShowModal(false);
-        setSelectedService(null);
-        setUserType(null);
-      } else {
-        console.warn('Error:', result.message);
-      }
-    } catch (err) {
-      console.error('Error:', err);
-    }
-  };
+  // Safely parse JSON
+  let result = {};
+  try {
+    result = await res.json();
+  } catch (jsonError) {
+    console.warn("Response was not valid JSON:", jsonError);
+    return;
+  }
 
-  useEffect(() => {
-    if (location.state?.openEstimate) {
-      setShowModal(true);
-    }
-  }, [location.state]);
+  console.log("✅ Server result:", result);
 
+  navigate('/result', { state: formData });
+  setShowModal(false);
+  setSelectedService(null);
+  setUserType(null);
+} catch (err) {
+  console.error('❌ Network error:', err);
+}
   return (
     <div className="home-page">
       <div className="hero-banner">
