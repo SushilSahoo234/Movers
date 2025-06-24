@@ -85,6 +85,7 @@ try {
 } catch (err) {
   console.error('❌ Network error:', err);
 }
+
   return (
     <div className="home-page">
       <div className="hero-banner">
@@ -220,5 +221,5 @@ try {
     </div>
   );
 };
-
+}
 export default Home;
