@@ -38,10 +38,18 @@ mongoose
   })
   .then(() => {
     console.log('✅ MongoDB connected');
+<<<<<<< HEAD
     app.listen(PORT, () => {
       console.log(`🚀 Server running on ${PORT}`);
     });
   })
   .catch((err) => {
+=======
+    const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
+    }).catch((err) => {
+>>>>>>> 8e4d6ad (Changes)
     console.error('❌ MongoDB connection failed:', err);
   });
