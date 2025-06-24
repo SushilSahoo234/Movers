@@ -1,9 +1,8 @@
-const express = require('express');
+import express from 'express';
+import Booking from '../models/Bookings.js';
+import Vehicle from '../models/DeliveryPartner.js';
+
 const router = express.Router();
-const Booking = require('../models/Bookings');
-const Vehicle = require('../models/DeliveryPartner');
-
-
 
 router.post('/book', async (req, res) => {
     try {
@@ -48,6 +47,7 @@ router.post('/book', async (req, res) => {
         res.status(500).json({ message: 'Something went wrong' });
     }
 });
+
 router.patch('/update-status/:bookingId', async (req, res) => {
     try {
         const bookingId = req.params.bookingId.trim(); 
@@ -81,4 +81,5 @@ router.patch('/update-status/:bookingId', async (req, res) => {
         res.status(500).json({ message: 'Error updating booking status' });
     }
 });
+
 export default router;

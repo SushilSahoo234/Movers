@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import estimateRequest from '../models/estimateRequest.js';
+
 const router = express.Router();
-const estimateRequest = require('../models/estimateRequest');
 
 router.post('/', async (req, res) => {
   try {
@@ -16,4 +17,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

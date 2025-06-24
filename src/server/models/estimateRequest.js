@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const estimateRequestSchema = new mongoose.Schema({
   name: { type: String, required: true },
   phone: { type: String, required: true },
-  email: { type: String},
+  email: { type: String },
   pickup: { type: String, required: true },
   drop: { type: String, required: true },
   userType: { type: String, enum: ['personal', 'business'], required: true },
@@ -12,4 +12,6 @@ const estimateRequestSchema = new mongoose.Schema({
   requestedAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('EstimateRequest', estimateRequestSchema);
+const EstimateRequest = mongoose.model('EstimateRequest', estimateRequestSchema);
+
+export default EstimateRequest;

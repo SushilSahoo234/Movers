@@ -10,11 +10,11 @@ import saveEstimate from './routes/saveEstimate.js';
 import getEstimate from './routes/getEstimate.js';
 import bookingRoutes from './routes/bookingRoutes.js';
 import deliveryRoutes from './routes/deliveryRoutes.js';
-import estimateHandler from './routes/getEstimate.js'; // Naming fixed for clarity
+import estimateHandler from './routes/getEstimate.js';
 import vehicleRoutes from './routes/vehicleRoutes.js';
 // Load environment variables
 dotenv.config();
-  
+
 // Initialize express app
 const app = express();
 const PORT = process.env.PORT || 5000;
