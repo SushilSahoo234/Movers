@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const deliveryPartnerSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -8,5 +8,6 @@ const deliveryPartnerSchema = new mongoose.Schema({
   source: { type: String, required: true }
 }, { timestamps: true });
 
+const DeliveryPartner = mongoose.model('DeliveryPartner', deliveryPartnerSchema);
 
-module.exports = mongoose.model('DeliveryPartner', deliveryPartnerSchema);
+export default DeliveryPartner;
