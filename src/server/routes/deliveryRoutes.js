@@ -1,22 +1,26 @@
-const express = require('express')
+// routes/deliveryRoutes.js
+
+import express from 'express';
+import DeliveryPartner from '../models/DeliveryPartner.js';
+
 const router = express.Router();
-const DeliveryPartner = require('../models/DeliveryPartner');
 
+router.post('/', async (req, res) => {
+    try {
+        const { name, phone, city, vehicle, source } = req.body;
 
-router.post('/', async(req,res) => {
-    try{
-        const{name, phone, city, vehicle, source} = req.body;
-
-        if(!name || !phone || !city || !vehicle || !source){
-            return res.status(400).json({error:'All fields are required'});
+        if (!name || !phone || !city || !vehicle || !source) {
+            return res.status(400).json({ error: 'All fields are required' });
         }
-        const partner = new DeliveryPartner({name, phone, city, vehicle, source});
+
+        const partner = new DeliveryPartner({ name, phone, city, vehicle, source });
         await partner.save();
 
-        res.status(201).json({message: 'Partner registered successfully'});
-    }catch(err){
+        res.status(201).json({ message: 'Partner registered successfully' });
+    } catch (err) {
         console.error(err);
-        res.status(500).json({error: 'Server error'});
+        res.status(500).json({ error: 'Server error' });
     }
 });
-module.exports = router;
+
+export default router; 

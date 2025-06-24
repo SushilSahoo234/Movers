@@ -8,6 +8,7 @@ import cors from 'cors';
 // Routes
 import saveEstimate from './routes/saveEstimate.js';
 import getEstimate from './routes/getEstimate.js';
+import bookingRoutes from './routes/bookingRoutes.js';
 import deliveryRoutes from './routes/deliveryRoutes.js';
 import estimateHandler from './routes/getEstimate.js'; // Naming fixed for clarity
 import vehicleRoutes from './routes/vehicleRoutes.js';
@@ -22,6 +23,7 @@ app.use(cors());
 app.use(express.json()); // to parse JSON request bodies
 
 // Routes
+app.use('/api/bookings', bookingRoutes);
 app.use('/api/delivery', deliveryRoutes);
 app.use('/api/estimate', saveEstimate);
 app.use('/api/estimate/fare', getEstimate);
