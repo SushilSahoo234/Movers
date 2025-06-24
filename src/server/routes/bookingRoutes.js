@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Bookings');
 const Vehicle = require('../models/DeliveryPartner');
-const nodemailer = require('nodemailer');
+
 
 
 router.post('/book', async (req, res) => {
@@ -81,4 +81,4 @@ router.patch('/update-status/:bookingId', async (req, res) => {
         res.status(500).json({ message: 'Error updating booking status' });
     }
 });
-module.exports = router;
+export default router;
