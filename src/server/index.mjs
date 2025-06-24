@@ -14,7 +14,7 @@ import estimateHandler from './routes/getEstimate.js'; // Naming fixed for clari
 import vehicleRoutes from './routes/vehicleRoutes.js';
 // Load environment variables
 dotenv.config();
-
+  
 // Initialize express app
 const app = express();
 const PORT = process.env.PORT || 5000;
