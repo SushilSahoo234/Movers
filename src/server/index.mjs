@@ -46,3 +46,18 @@ mongoose
   .catch((err) => {
     console.error('❌ MongoDB connection failed:', err);
   });
+
+  import path from 'path';
+import { fileURLToPath } from 'url';
+
+// For ES modules to use __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve frontend static files
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// Catch-all route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
