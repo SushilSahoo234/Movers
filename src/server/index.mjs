@@ -19,7 +19,9 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: "https://movers-1-t9u3.onrender.com"
+}));
 app.use(express.json()); // to parse JSON request bodies
 
 // Routes
