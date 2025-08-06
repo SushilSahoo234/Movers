@@ -20,6 +20,7 @@ const Home = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
 
   const cities = ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Chennai', 'Kolkata', 'Bhubneshwar'];
 
@@ -56,7 +57,7 @@ const Home = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:5000/api/estimate', {
+      const res = await fetch(`${backendURL}/api/estimate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

@@ -14,6 +14,7 @@ const Delivery = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const navigate = useNavigate();
   const [activeOption, setActiveOption] = useState<"register" | "book" | null>(null);
+  const backendURL = import.meta.env.VITE_BACKEND_URL;
   const handleSubmit = async(e:React.FormEvent) => {
     e.preventDefault();
     const formData = {
@@ -24,7 +25,7 @@ const Delivery = () => {
       source,
     };
     try {
-      const res = await fetch('http://localhost:5000/api/delivery',{
+      const res = await fetch(`${backendURL}/api/delivery`,{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(formData),

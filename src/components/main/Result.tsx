@@ -15,7 +15,7 @@ const Result = () => {
   const navigate = useNavigate();
 
   const state = location.state as LocationState | null;
-
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
   const [pickup, setPickup] = useState('');
   const [drop, setDrop] = useState('');
   const [estimate, setEstimate] = useState<number | null>(null);
@@ -25,7 +25,7 @@ const Result = () => {
   // Fetch vehicles in the same city
   const fetchVehiclesInCity = async (city: string) => {
     try {
-      const res = await fetch("http://localhost:5000/api/delivery-partners/by-city", {
+      const res = await fetch(`${backendURL}/api/delivery-partners/by-city`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city })
@@ -77,7 +77,6 @@ const Result = () => {
         const data = await res.json();
         return data.features[0]?.geometry.coordinates;
       };
-
       const startCoords = await fetchCoordinates(pickup);
       const endCoords = await fetchCoordinates(drop);
 
