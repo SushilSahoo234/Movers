@@ -14,7 +14,7 @@ const Delivery = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const navigate = useNavigate();
   const [activeOption, setActiveOption] = useState<"register" | "book" | null>(null);
-  const backendURL = import.meta.env.VITE_BACKEND_URL;
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
   const handleSubmit = async(e:React.FormEvent) => {
     e.preventDefault();
     const formData = {
