@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const DeliveryPartner = require('../models/DeliveryPartner');
-const Vehicle = require('../models/DeliveryPartner')
+// const Vehicle = require('../models/DeliveryPartner')
 router.post('/by-city', async (req, res) => {
     console.log("Mongoose DB name:", mongoose.connection.name);
   const { city } = req.body;
