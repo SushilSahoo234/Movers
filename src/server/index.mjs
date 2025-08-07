@@ -90,7 +90,7 @@ app.use(express.json()); // ✅ Parse JSON bodies
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/delivery', deliveryRoutes);
 app.use('/api/estimate', saveEstimate);          // e.g., POST /api/estimate
-app.use('/api/estimate', getEstimate);           // e.g., GET /api/estimate/fare/:source/:destination
+app.use('/api/estimate/fare', getEstimate);        // e.g., GET /api/estimate/fare/:source/:destination
 app.use('/api/delivery-partners', vehicleRoutes);
 
 // MongoDB connection
