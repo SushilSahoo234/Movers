@@ -10,7 +10,7 @@ import saveEstimate from './routes/saveEstimate.js';
 import getEstimate from './routes/getEstimate.js';
 import bookingRoutes from './routes/bookingRoutes.js';
 import deliveryRoutes from './routes/deliveryRoutes.js';
-import estimateHandler from './routes/getEstimate.js'; // Naming fixed for clarity
+// import estimateHandler from './routes/getEstimate.js'; // Naming fixed for clarity
 import vehicleRoutes from './routes/vehicleRoutes.js';
 // Load environment variables
 dotenv.config();
@@ -29,7 +29,7 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/delivery', deliveryRoutes);
 app.use('/api/estimate', saveEstimate);
 app.use('/api/estimate/fare', getEstimate);
-app.use('/api/result', estimateHandler);
+// app.use('/api/result', estimateHandler);
 app.use('/api/delivery-partners', vehicleRoutes);
 
 // MongoDB Connection
