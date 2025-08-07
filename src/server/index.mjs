@@ -69,7 +69,7 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Routes
+// Import route handlers
 import saveEstimate from './routes/saveEstimate.js';
 import getEstimate from './routes/getEstimate.js';
 import bookingRoutes from './routes/bookingRoutes.js';
@@ -80,24 +80,25 @@ dotenv.config();
 
 const app = express();
 
+// Middlewares
 app.use(cors({
-  origin: "https://movers-1-t9u3.onrender.com"
+  origin: "https://movers-1-t9u3.onrender.com", // ✅ Allow frontend origin
 }));
-app.use(express.json());
+app.use(express.json()); // ✅ Parse JSON bodies
 
-// Backend Routes
+// Backend API Routes
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/delivery', deliveryRoutes);
-app.use('/api/estimate', saveEstimate);
-app.use('/api/estimate/fare', getEstimate);
+app.use('/api/estimate', saveEstimate);          // e.g., POST /api/estimate
+app.use('/api/estimate', getEstimate);           // e.g., GET /api/estimate/fare/:source/:destination
 app.use('/api/delivery-partners', vehicleRoutes);
 
-// MongoDB connection and static file setup
-mongoose.connect(process.env.MONGO_URI, {})
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅ MongoDB connected');
 
-    // Serve frontend only AFTER routes
+    // Static file serving
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
