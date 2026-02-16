@@ -19,8 +19,10 @@ dotenv.config();
 const app = express();
 
 // Middlewares
+const cors = require("cors");
 app.use(cors({
-  origin: " https://movers-8mf4.onrender.com",
+  origin: " https://movers-frontend.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 app.use(express.json()); // to parse JSON request bodies
