@@ -19,9 +19,9 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-const cors = require("cors");
+
 app.use(cors({
-  origin: " https://movers-frontend.onrender.com",
+  origin: "https://movers-frontend.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
