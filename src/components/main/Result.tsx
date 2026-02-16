@@ -25,7 +25,7 @@ const Result = () => {
   // Fetch vehicles in the same city
   const fetchVehiclesInCity = async (city: string) => {
     try {
-      const res = await fetch("${process.env.REACT_APP_API_URL}/api/delivery-partners/by-city", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/delivery-partners/by-city`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city })
@@ -93,7 +93,7 @@ const Result = () => {
         return;
       }
 
-      const response = await fetch("${process.env.REACT_APP_API_URL}/api/estimate/fare/result", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/estimate/fare/result`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
